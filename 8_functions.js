@@ -47,4 +47,24 @@ console.log(variable3);
 
 //----------------------------------------------------------------------------------------
 
+//callback function
 
+function callbackableFunction (question, yesFunction, noFunction){
+    if(!question){
+        noFunction();
+        return;
+    }
+    yesFunction ();
+}
+
+function yesFunction(){
+    console.log("Yes");
+}
+
+function noFunction(){
+    console.log("not at all");
+
+}
+
+callbackableFunction("Are you old enough to drink?", yesFunction, noFunction);
+callbackableFunction("", yesFunction, noFunction);
