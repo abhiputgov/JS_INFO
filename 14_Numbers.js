@@ -23,5 +23,7 @@ console.log(123456..toString(36)); //double dots is needed if the method is to b
 //Rounding: there are multiple methods to ropund of a number such as:
 
 console.log(Math.floor(3.6), Math.floor(-1.1), Math.ceil(3.1), Math.ceil(-1.1), Math.round(3.6), Math.round(3.5));
-
 console.log(Math.trunc(3.1), Math.trunc(-1.2));
+
+//imprecise calculation
+console.log(0.1.toFixed(20));
