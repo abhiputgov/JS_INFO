@@ -24,3 +24,34 @@ console.log(array4);
 let array5 = [`t`, `e`, `s`, `t`, `i`, `s`];
 console.log(array5.slice(0,4));
 console.log(array5.slice(-2));
+
+//iterating using forEach:
+["Bilbo", "Gandalf", "Nazgul"].forEach((item, index, array) => {
+    console.log(`${item} is at index ${index} in ${array}`);
+  });
+
+  //searching in an array is another useful quality
+  let array6 = [1, 0, false];
+
+console.log( array6.indexOf(0) ); // 1
+console.log( array6.indexOf(false) ); // 2
+console.log( array6.indexOf(null) ); // -1
+
+console.log( array6.includes(1) ); // true
+ // also finding NaN is usefule with includes since it was introduced very recently keeping in mind the date operations that can be in the array operations
+ const array7 = [NaN];
+console.log( array7.indexOf(NaN) ); // -1 (wrong, should be 0)
+console.log( array7.includes(NaN) );// true (correct)
+
+//find operation in an array
+let users = [
+    {id: 1, name: "John"},
+    {id: 2, name: "Pete"},
+    {id: 3, name: "Mary"}
+  ];
+  
+  let user = users.find(item => item.id == 1);
+  
+  console.log(user.name); // John 
+
+  
