@@ -54,4 +54,45 @@ let users = [
   
   console.log(user.name); // John 
 
+//sort function => arr.sort( (a, b) => a - b );
+let array8 = [ 1, 2, 15 ];
+array8.sort(function(a, b) { return a - b; });
+console.log(array8);  // 1, 2, 15
+
+//reverse function:
+let array9 = [1, 2, 3, 4, 5];
+array9.reverse();
+console.log( array9 ); // 5,4,3,2,1
   
+//reduce and reduceRight functions of array:
+// the function declaration is as follows:
+  //let value = arr.reduce(function(accumulator, item, index, array) {
+  //}, [initial]);
+
+let reduceableArray = [1, 2, 3, 4, 5];
+let reducedArrayResult = reduceableArray.reduce((accumulator, item) => accumulator + item, 0);
+console.log(reducedArrayResult);
+
+
+//thisArg is supported in most of the array methods:
+let army = {
+  minAge: 18,
+  maxAge: 27,
+  canJoin(user) {
+    return user.age >= this.minAge && user.age < this.maxAge;
+  }
+};
+
+let usersList = [
+  {age: 16},
+  {age: 20},
+  {age: 23},
+  {age: 30}
+];
+
+// find users, for who army.canJoin returns true
+let soldiers = usersList.filter(army.canJoin, army);
+
+alert(soldiers.length); // 2
+alert(soldiers[0].age); // 20
+alert(soldiers[1].age); // 23
